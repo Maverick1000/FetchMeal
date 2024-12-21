@@ -14,9 +14,11 @@ extension RecipeView{
         private var categoryName: String = "Recipes"
         
         @Published var recipes: [Recipe] = [Recipe]()
-        
+        @Published var sectionRecipe : [SectionRecipe] = [SectionRecipe]()
+    
         private var url: URL? {
-            return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
+            //return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
+            return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes-malformed.json")
         }
         
         init(categoryName: String) {
@@ -28,6 +30,7 @@ extension RecipeView{
             let downloaded:Recipes? = await networkManager.fetch(type: Recipes.self, from: url)
             if let downloaded = downloaded {
                 recipes = downloaded.recipes.sorted()
+                sectionRecipe = Utilities.sectionSort(items: downloaded.recipes)
             }
        }
     }

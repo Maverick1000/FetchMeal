@@ -7,33 +7,38 @@
 
 import SwiftUI
 
-
 struct RecipeView: View {
     var categoryName: String
     
     @StateObject var recipeViewModel: RecipeViewModel
     
-    init(categoryName: String = "Dessert") {
+    init(categoryName: String = "cuisine") {
         self.categoryName = categoryName
         self._recipeViewModel = StateObject(wrappedValue: RecipeViewModel(categoryName: categoryName) )
     }
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            //List(recipeViewModel.sectionRecipe,id:\.section){ section in
+            //Text(section.section)
+            if recipeViewModel.recipes.count == 0{
+                Text("test")
+            }else{
+                List(recipeViewModel.recipes, id:\.uuid ) { recipe in
+                    HStack(alignment: .top){
+                        RecipeListView(recipeItem: recipe)
+                    }
+                    .navigationTitle(categoryName)
+                }
+                .task {
+                    await recipeViewModel.fetchRecipes()
+                }
+            }
         }
-        .padding()
-        .task {
-            await recipeViewModel.fetchRecipes()
-        }
+        
     }
-    
-    
 }
 
 #Preview {
-    RecipeView(categoryName: "test")
+    RecipeView(categoryName: "Cuisine")
 }

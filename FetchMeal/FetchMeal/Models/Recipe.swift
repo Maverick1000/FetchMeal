@@ -11,6 +11,11 @@ struct Recipes:Codable{
     var recipes:[Recipe]
 }
 
+struct SectionRecipe{
+    var section:String
+    var recipes:[Recipe]
+}
+
 struct Recipe:Codable,Comparable{
     var uuid: UUID
     var name: String
@@ -34,13 +39,3 @@ struct Recipe:Codable,Comparable{
         return lhs.name < rhs.name
     }
 }
-
-
-
-//"cuisine": "French",
-//            "name": "White Chocolate Crème Brûlée",
-//            "photo_url_large": "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f4b7b7d7-9671-410e-bf81-39a007ede535/large.jpg",
-//            "photo_url_small": "https://d3jbb8n5wk0qxi.cloudfront.net/photos/f4b7b7d7-9671-410e-bf81-39a007ede535/small.jpg",
-//            "source_url": "https://www.bbcgoodfood.com/recipes/2540/white-chocolate-crme-brle",
-//            "uuid": "ef7d81b7-07ba-4fab-a791-ae10e2817e66",
-//            "youtube_url": "https://www.youtube.com/watch?v=LmJ0lsPLHDc"
