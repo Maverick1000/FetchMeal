@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct RecipeView: View {
-    var categoryName: String
+    var listHeaderName: String
     
     @StateObject var recipeViewModel: RecipeViewModel
     
-    init(categoryName: String = "cuisine") {
-        self.categoryName = categoryName
-        self._recipeViewModel = StateObject(wrappedValue: RecipeViewModel(categoryName: categoryName) )
+    init(listHeaderName: String = "Cuisine") {
+        self.listHeaderName = listHeaderName
+        self._recipeViewModel = StateObject(wrappedValue: RecipeViewModel())
     }
     
     var body: some View {
@@ -22,23 +22,25 @@ struct RecipeView: View {
             //List(recipeViewModel.sectionRecipe,id:\.section){ section in
             //Text(section.section)
             if recipeViewModel.recipes.count == 0{
-                Text("test")
+                NoDataView()
             }else{
                 List(recipeViewModel.recipes, id:\.uuid ) { recipe in
                     HStack(alignment: .top){
                         RecipeListView(recipeItem: recipe)
                     }
-                    .navigationTitle(categoryName)
-                }
-                .task {
-                    await recipeViewModel.fetchRecipes()
+                    .navigationTitle(listHeaderName)
                 }
             }
         }
-        
+        .task {
+            await recipeViewModel.fetchRecipes()
+        }
+        .refreshable {
+            await recipeViewModel.fetchRecipes()
+        }
     }
 }
 
 #Preview {
-    RecipeView(categoryName: "Cuisine")
+    RecipeView(listHeaderName: "Cuisine")
 }

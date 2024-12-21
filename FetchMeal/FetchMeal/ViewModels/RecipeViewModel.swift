@@ -11,18 +11,15 @@ import Foundation
 extension RecipeView{
     @MainActor class RecipeViewModel:ObservableObject {
         var networkManager = NetworkManager()
-        private var categoryName: String = "Recipes"
+      
         
         @Published var recipes: [Recipe] = [Recipe]()
         @Published var sectionRecipe : [SectionRecipe] = [SectionRecipe]()
     
         private var url: URL? {
-            //return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
-            return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes-malformed.json")
-        }
-        
-        init(categoryName: String) {
-            self.categoryName = categoryName
+            return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
+            //return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes-malformed.json")
+            //return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes-empty.json")
         }
         
         func fetchRecipes() async {

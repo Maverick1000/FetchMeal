@@ -3,4 +3,52 @@
    uuid = "C85A2AC3-7B43-4434-966A-FFB4BC751D13"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73A8E4F1-0AFA-4EBF-B568-4F7CD9A34706"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FetchMeal/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "fetch(type:from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73A8E4F1-0AFA-4EBF-B568-4F7CD9A34706 - a218673d5baa87a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for FetchMeal.NetworkManager.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, from: Foundation.URL) async -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "FetchMeal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulwalker/Projects/GitHub/FetchMeal/FetchMeal/FetchMeal/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+               <Location
+                  uuid = "73A8E4F1-0AFA-4EBF-B568-4F7CD9A34706 - 92d04f05c0c725a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for FetchMeal.NetworkManager.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, from: Foundation.URL) async -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "FetchMeal.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paulwalker/Projects/GitHub/FetchMeal/FetchMeal/FetchMeal/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
