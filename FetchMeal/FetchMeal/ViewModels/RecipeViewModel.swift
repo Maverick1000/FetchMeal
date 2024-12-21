@@ -18,7 +18,9 @@ extension RecipeView{
     
         private var url: URL? {
             return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
+            //Malformed Data:
             //return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes-malformed.json")
+            //Empty Data:
             //return URL(string:"https://d3jbb8n5wk0qxi.cloudfront.net/recipes-empty.json")
         }
         
